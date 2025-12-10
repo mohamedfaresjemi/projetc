@@ -95,7 +95,7 @@ bool capteur(){
 
 void contourement(){
     if (capteur()) {
-        printf("COMMANDES DE CONTOUREMENT\n");
+        printf("\nCOMMANDES DE CONTOUREMENT\n");
         cmd arr = {ARRET_URGENCE, 3, 0, URGENTE};
         cmd rec = {RECULER, 2, 2, URGENTE};
         cmd drt = {TOURNER_DROITE, 4, 2, URGENTE};
@@ -266,7 +266,7 @@ int main() {
     do {
         printf("\n1. Ajouter une commande dans les files\n");
         printf("2. Faire l'execution\n");
-        printf("3. Construire un arbre et afficher chemins sans obstacle\n");
+        printf("3. Construire un arbre et afficher les chemins sans obstacle\n");
         printf("4. Quitter\n");
         printf("Choix : ");
         scanf("%d", &choix);
@@ -296,6 +296,7 @@ int main() {
     } while (choix != 4);
     return 0;
 }
+
 
 
 
