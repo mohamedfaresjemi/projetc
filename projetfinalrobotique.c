@@ -149,11 +149,11 @@ void journaliser_commande(cmd c) {
 void afficherCommande(cmd c) {
     printf("[Type: ");
     switch (c.type) {
-        case AVANCER:        printf("AVANCER"); break;
-        case RECULER:        printf("RECULER"); break;
-        case TOURNER_GAUCHE: printf("TOURNER_GAUCHE"); break;
-        case TOURNER_DROITE: printf("TOURNER_DROITE"); break;
-        case ARRET_URGENCE:  printf("ARRET_URGENCE"); break;
+        case AVANCER:printf("AVANCER"); break;
+        case RECULER:printf("RECULER"); break;
+        case TOURNER_GAUCHE:printf("TOURNER_GAUCHE"); break;
+        case TOURNER_DROITE:printf("TOURNER_DROITE"); break;
+        case ARRET_URGENCE:printf("ARRET_URGENCE"); break;
     }
 
     printf("| Duree=%ds", c.duree);
@@ -172,7 +172,7 @@ void execution(file *file_normale, file *file_urgent){
 
         cmd c;
         if (file_urgent->tete != NULL) {
-            printf("\nCOMMANDE URGENTE!!!!:\n");
+            printf("\nCOMMANDE URGENTE:\n");
             c = defiler(file_urgent);
             journaliser_commande(c);
         } else if ((file_normale->tete != NULL)&& (file_urgent->tete == NULL)) {
@@ -186,14 +186,6 @@ void execution(file *file_normale, file *file_urgent){
         afficherCommande(c);
     }
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -228,9 +220,9 @@ arbre* construire_arbre() {
     bool obstacle = capteur();
 
     if (obstacle)
-        printf("Obstacle détecté: La branche stoppée.\n");
+        printf("Obstacle détecté dand la branche \n");
     else
-        printf("Pas d'obstacle.Branche OK.\n");
+        printf("Pas d'obstacle dans la branche \n");
 
     arbre *root = creer_noeud(c, obstacle);
 
@@ -304,6 +296,7 @@ int main() {
     } while (choix != 4);
     return 0;
 }
+
 
 
 
